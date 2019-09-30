@@ -66,7 +66,7 @@ def handle_connect():
     """Called when a remote web socket client connects to this server"""
     logger.info("Client {} connected.".format(request.sid))
 
-    # Send initialisating data to newly connected client.
+    # Send initialising data to newly connected client.
     emit("led", state)
 
 

@@ -3,4 +3,4 @@ __pycache__
 .idea
 .AppleDouble
 .DS_Store
-.log
+*.log
