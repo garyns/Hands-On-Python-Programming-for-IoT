@@ -11,4 +11,4 @@ The code in this repository accompanies the Packt Book "Hands-On Python for IoT"
 ## [Chapter 3](chapter3) - RESTFul APIs and Web Socket Services with Flask
 
 
-## [Chapter 4](chapter5) - Distributed Systems with Python and MQTT
+## [Chapter 4](chapter4) - Distributed Systems with Python and MQTT
