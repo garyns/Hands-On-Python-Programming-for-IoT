@@ -44,4 +44,4 @@ if __name__ == '__main__':
             sleep(0.05)
 
     except KeyboardInterrupt:
-        i2c.deinit()                                                               # (6)
+        i2c.deinit()                                                            # (6)

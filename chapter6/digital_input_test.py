@@ -13,13 +13,13 @@ from time import sleep
 
 GPIO_PIN=21
 pi = pigpio.pi()
-pi.set_mode(GPIO_PIN, pigpio.INPUT)
+pi.set_mode(GPIO_PIN, pigpio.INPUT)              # (1)
 pi.set_pull_up_down(GPIO_PIN, pigpio.PUD_OFF)
 #pi.set_pull_up_down(GPIO_PIN, pigpio.PUD_UP)
 #pi.set_pull_up_down(GPIO_PIN, pigpio.PUD_DOWN)
 
 try:
-    while True:
+    while True:                                  # (2)
         state = pi.read(GPIO_PIN);
         print("GPIO {} is {}".format(GPIO_PIN, state))
         sleep(0.02)

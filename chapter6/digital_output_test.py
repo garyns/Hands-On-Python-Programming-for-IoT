@@ -13,10 +13,10 @@ from time import sleep
 
 GPIO_PIN=21
 pi = pigpio.pi()
-pi.set_mode(GPIO_PIN, pigpio.OUTPUT)
+pi.set_mode(GPIO_PIN, pigpio.OUTPUT)               # (1)
 
 try:
-    while True:
+    while True:                                    # (2)
         # Alternate between HIGH and LOW
         state = pi.read(GPIO_PIN); # 1 or 0
         new_state = (int)(not state) # 1 or 0

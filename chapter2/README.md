@@ -1,4 +1,4 @@
-# Hands-On Python for IoT
+# Hands-On Python Programming for IoT
 
 ## Chapter 2 - Introduction to Python and IoT
 

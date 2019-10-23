@@ -1,4 +1,4 @@
-# Hands-On Python for IoT
+# Hands-On Python Programming for IoT
 
 ## Chapter 1 - Setting Up Your Development Environment
 

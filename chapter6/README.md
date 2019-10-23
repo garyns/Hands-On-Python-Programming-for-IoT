@@ -1,4 +1,4 @@
-# Hands-On Python for IoT
+# Hands-On Python Programming for IoT
 
 ## Chapter 6 - Electronics 101 for the Software Engineer
 

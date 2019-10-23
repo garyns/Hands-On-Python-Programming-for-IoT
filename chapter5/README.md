@@ -1,4 +1,4 @@
-# Hands-On Python for IoT
+# Hands-On Python Programming for IoT
 
 ## Chapter 5 - Connecting Python to the Physical World
 
