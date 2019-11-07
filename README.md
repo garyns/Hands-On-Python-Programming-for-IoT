@@ -12,4 +12,8 @@ The code in this repository accompanies the Packt Book "Hands-On Python Programm
 
 ## [Chapter 5](chapter5) - Connecting Python to the Physical World
 
-## [Chapter 6](chapter5) - Electronics 101 for the Software Engineer
+## [Chapter 6](chapter6) - Electronics 101 for the Software Engineer
+
+## [Chapter 7](chapter7) - Switching Things On and Off
+
+
