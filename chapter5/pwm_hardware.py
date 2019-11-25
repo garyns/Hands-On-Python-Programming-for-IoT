@@ -45,6 +45,7 @@ ads = ADS.ADS1115(i2c)
 frequency_ch = AnalogIn(ads, ADS.P0)
 duty_cycle_ch = AnalogIn(ads, ADS.P1)
 
+
 # The max/min range we get from our Analog Inputs on the ADS1115.
 # Max value derived by observation. See print(output1) in while loop.
 A_IN_EDGE_ADJ = 0.002 # Edge adjustment factor for MIN_A_IN_VOLTS and MAN_A_IN_VOLTS
@@ -54,7 +55,7 @@ MAX_A_IN_VOLTS = 3.3 - A_IN_EDGE_ADJ
 
 # Max/Min Duty Cycle value as per PiGPIO documentation
 # for hardware_PWM()
-MIN_DUTY_CYCLE = 0                                                             # (1)
+MIN_DUTY_CYCLE = 0
 MAX_DUTY_CYCLE = 1000000
 
 
@@ -65,7 +66,7 @@ MIN_FREQ = 0
 MAX_FREQ = 60 # max 125000000
 
 
-def map_value(in_v, in_min, in_max, out_min, out_max):                        # (2)
+def map_value(in_v, in_min, in_max, out_min, out_max):
     """Helper method to map an input value (v_in)
     between alternative max/min ranges."""
     
@@ -81,13 +82,13 @@ if __name__ == '__main__':
             # Frequency value mapped from Analog Input Channel
             # to PiGPIO expected range
             # (capped at 60Hz per above comments).
-            frequency = int(map_value(frequency_ch.voltage,                   # (3)
+            frequency = int(map_value(frequency_ch.voltage,
                                       MIN_A_IN_VOLTS, MAX_A_IN_VOLTS,
                                       MIN_FREQ, MAX_FREQ))
 
             # Duty Cycle value mapped from Analog Input
             # Channel to PiGPIO expected range.
-            duty_cycle = int(map_value(duty_cycle_ch.voltage,                 # (4)
+            duty_cycle = int(map_value(duty_cycle_ch.voltage,
                                        MIN_A_IN_VOLTS, MAX_A_IN_VOLTS,
                                        MIN_DUTY_CYCLE, MAX_DUTY_CYCLE))
             
@@ -95,18 +96,18 @@ if __name__ == '__main__':
 
             # Set Hardware PWM Duty Cycle and Frequency.
             # http://abyz.me.uk/rpi/pigpio/python.html#hardware_PWM
-            pi.hardware_PWM(LED_GPIO_PIN, frequency, duty_cycle)               # (5)
+            pi.hardware_PWM(LED_GPIO_PIN, frequency, duty_cycle)
 
             # Raw Analog values.
-            output1 = ("Frequency Pot (A0) value={:>5} volts={:>5.3f} "
+            output1 = ("Frequency Pot (A0) value={:>5} volts={:>5.3f} " 
                       "Duty Cycle Pot (A1) value={:>5} volts={:>5.3f}")
-            output1 := output1.format(frequency_ch.value, frequency_ch.voltage,
+            output1 = output1.format(frequency_ch.value, frequency_ch.voltage, \
                                    duty_cycle_ch.value, duty_cycle_ch.voltage)
             #print(output1)
 
 
             # Value mapped and formatted output.
-            output2 = "Frequency {:>5}Hz    Duty Cycle {:>3}%"
+            output2 = "Frequency {:>5}Hz    Duty Cycle {:>3}%" \
                       .format(frequency, duty_cycle_percent)
                       
             print(output2)
@@ -114,7 +115,7 @@ if __name__ == '__main__':
             sleep(0.05)
 
     except KeyboardInterrupt:      
-      i2c.deinit()
+      i2c.deinit()                                                               # (6)
       
       # Revert GPIO to basic output and make LOW to turn LED off.
       pi.set_mode(LED_GPIO_PIN, pigpio.OUTPUT)
