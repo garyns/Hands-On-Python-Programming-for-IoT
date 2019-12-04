@@ -18,3 +18,4 @@ The code in this repository accompanies the Packt Book "Hands-On Python Programm
 
 ## [Chapter 8](chapter8) - Lights, Indicators and Displaying Information
 
+## [Chapter 9](chapter9) - Measuring Temperature, Humidity and Moisture
