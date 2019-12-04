@@ -16,4 +16,5 @@ The code in this repository accompanies the Packt Book "Hands-On Python Programm
 
 ## [Chapter 7](chapter7) - Switching Things On and Off
 
+## [Chapter 8](chapter8) - Lights, Indicators and Displaying Information
 

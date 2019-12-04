@@ -8,4 +8,4 @@
 * `apa102_led_strip.py` - Controlling a Multi-Color APA102 LED Strip
 * `passive_buzzer_rtttl.py` - Play a RTTTL tune using PWM and a Passive Buzzer
 * `oled_cpu_temp.py` - Display CPU temperature on an OLED Display
-* `temp_high.png`, `temp_low.png`, `temp_med.png` - Images used by `OLED_CPU_Temp.py`
+* `temp_high.png`, `temp_low.png`, `temp_med.png` - Images used by `oled_cpu_temp.p`
