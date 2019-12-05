@@ -40,7 +40,7 @@ try:
 	# Fade Out.
 	for duty_cycle in range(100, 0, -1):                         # (4)
 	    pi.set_PWM_dutycycle(GPIO_PIN, duty_cycle)                      
-	    print("Dyty Cycle {}%".format(duty_cycle))
+	    print("Duty Cycle {}%".format(duty_cycle))
 	    sleep(0.05)
 
 	sleep(2)	
