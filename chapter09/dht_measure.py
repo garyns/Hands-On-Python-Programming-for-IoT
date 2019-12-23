@@ -14,9 +14,11 @@ SENSOR_GPIO = 21
 sensor = DHT11(SENSOR_GPIO)              # (2)
 #sensor = DHT22(SENSOR_GPIO)
 
-result = sensor.read(retries=2)          # (3)
-print(result)
+if __name__ == '__main__':
 
-result = sensor.sample(samples=5)        # (4)
-print(result)
+    result = sensor.read(retries=2)          # (3)
+    print(result)
+
+    result = sensor.sample(samples=5)        # (4)
+    print(result)
 

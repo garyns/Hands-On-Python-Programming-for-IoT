@@ -1,5 +1,5 @@
 """
-File: chapter1/gpio_pkg_check.py
+File: chapter01/gpio_pkg_check.py
 
 This Python script checks for the availability of various Python GPIO Library Packages for the Raspberry Pi.
 It does this by attempting to import the Python package. If the package import is successful

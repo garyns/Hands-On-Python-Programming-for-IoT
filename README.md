@@ -19,3 +19,5 @@ The code in this repository accompanies the Packt Book "Hands-On Python Programm
 ## [Chapter 8](chapter08) - Lights, Indicators and Displaying Information
 
 ## [Chapter 9](chapter09) - Measuring Temperature, Humidity and Moisture
+
+## [Chapter 10](chapter10) - Movement with Motors, Servos and Steppers

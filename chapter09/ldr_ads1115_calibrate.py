@@ -71,5 +71,5 @@ if __name__ == '__main__':
         print("File " + OUTPUT_FILE + " created with:\n")
         print(output)
 
-    except KeyboardInterrupt:
+    finally:
         i2c.deinit()                                                          
