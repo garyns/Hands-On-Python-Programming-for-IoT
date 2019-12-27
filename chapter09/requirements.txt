@@ -4,7 +4,7 @@ adafruit-circuitpython-busdevice==4.0.1
 Adafruit-PlatformDetect==1.3.6
 Adafruit-PureIO==0.2.3
 pigpio==1.44
-pigpio-dht==0.2.8
+pigpio-dht>=0.3
 pkg-resources==0.0.0
 rpi-ws281x==4.2.2
 RPi.GPIO==0.7.0
