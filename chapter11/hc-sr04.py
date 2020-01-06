@@ -11,8 +11,8 @@ Built and tested with Python 3.7 on Raspberry Pi 4 Model B
 from time import sleep, time
 import pigpio
 
-# REMEMBER the HC-SR04 is a 5-volt 
-# device so you MUST use a voltage 
+# REMEMBER the HC-SR04 is a 5-volt
+# device so you MUST use a voltage
 # divider on ECHO_GPIO
 TRIG_GPIO = 20                                         # (1)
 ECHO_GPIO = 21
@@ -74,7 +74,7 @@ def get_distance_cms():                                # (7)
 
     # Convert to centimeters
     distance_in_centimeters = distance_in_meters * 100
-    
+
     return distance_in_centimeters
 
 
@@ -85,7 +85,7 @@ def echo_handler(gpio, level, tick):                                            
 
     if level == pigpio.HIGH:
         tick_start = tick # Start Timer                                                     # (12)
-        
+
     elif level == pigpio.LOW:
         tick_end = tick # End Timer                                                         # (13)
         reading_success = True
@@ -101,7 +101,7 @@ if __name__ == "__main__":
         print("Press Control + C to Exit")
 
         while True:                                                                         # (15)
- 
+
             distance_cms = get_distance_cms()
 
             if distance_cms == SENSOR_TIMEOUT:
@@ -112,7 +112,6 @@ if __name__ == "__main__":
 
             sleep(0.25) # Sleep a little between readings. (Note - We shouldn't query the sensor more than once every 60ms.)
 
-    finally:
-        # PiGPIO Cleanup.
+    except KeyboardInterrupt:
         echo_callback.cancel()
         pi.stop()

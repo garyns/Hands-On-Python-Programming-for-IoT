@@ -13,7 +13,7 @@ from time import sleep
 from signal import pause
 import pigpio
 
-GPIO = 20
+GPIO = 21
 
 pi = pigpio.pi()
 
