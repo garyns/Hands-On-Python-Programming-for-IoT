@@ -1,5 +1,5 @@
 """
-File: chapter9/moisture_LDR.py
+File: chapter09/moisture_LDR.py
 
 Detect moisture using ADS1115 ADC
 
@@ -13,7 +13,7 @@ import pigpio
 import moisture_calibration_config as calibration                            # (1)  <<<< DIFFERENCE: importing moisture calibration file.
 
 # Below imports are part of Circuit Python and Blinka
-import board                                                      
+import board
 import busio
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
@@ -30,7 +30,7 @@ pi.write(LED_GPIO, pigpio.LOW) # LED Off
 # Voltage readings from ADS1115 when
 # probe is immersed (wet), and when not immersed (dry)
 WET_VOLTS = calibration.MIN_VOLTS                                           # (2) <<<< DIFFERENCE: Variable names changed.
-DRY_VOLTS = calibration.MAX_VOLTS 
+DRY_VOLTS = calibration.MAX_VOLTS
 
 # Votage reading (and buffer) where we set
 # global variable triggered = True or False
@@ -41,14 +41,14 @@ TRIGGER_BUFFER = 0.25                                                       # (4
 # Create the I2C bus & ADS object.
 i2c = busio.I2C(board.SCL, board.SDA)
 ads = ADS.ADS1115(i2c)
-analog_channel = AnalogIn(ads, ADS.P0)  #ADS.P0 --> A0 
+analog_channel = AnalogIn(ads, ADS.P0)  #ADS.P0 --> A0
 
 # "triggered" is set to True or False as the voltage
-# read by the ADS1115 passes over it's 
+# read by the ADS1115 passes over it's
 # TRIGGER_VOLTS (+/- TRIGGER_VOLTS) thresholds.
 triggered = False                                                           # (5)
 
-def update_trigger(volts): 
+def update_trigger(volts):
     """
     Compare the volts parameter to trigger conditions
     TRIGGER_VOLTS +/- TRIGGER_BUFFER and update
@@ -63,8 +63,8 @@ def update_trigger(volts):
 
 
 if __name__ == '__main__':
-  
-    trigger_text = "{:0.4f} +/- {}".format(TRIGGER_VOLTS, TRIGGER_BUFFER)  
+
+    trigger_text = "{:0.4f} +/- {}".format(TRIGGER_VOLTS, TRIGGER_BUFFER)
 
     try:
         while True:                                                        # (6)
@@ -81,7 +81,7 @@ if __name__ == '__main__':
             sleep(0.05)
 
     except KeyboardInterrupt:
-        i2c.deinit()                                                          
+        i2c.deinit()
         print("Switching LED Off")
         pi.write(LED_GPIO, pigpio.LOW) # LED Off
         pi.stop() # PiGPIO Cleanup

@@ -1,5 +1,5 @@
 """
-File: chapter4/mqtt_led.py
+File: chapter04/mqtt_led.py
 
 A full life-cycle Python + MQTT program to control an LED.
 
@@ -30,17 +30,16 @@ Device.pin_factory = PiGPIOFactory() # Set GPIOZero to use PiGPIO by default.
 
 # Global Variables
 LED_GPIO_PIN = 21
-BROKER_HOST = "rpi4.local"                                      # TEMPXXXXXXXXXXXXXXXXXXXXXXX
-#BROKER_HOST = "localhost"                                      # (2)
+BROKER_HOST = "localhost"                                       # (2)
 BROKER_PORT = 1883
 CLIENT_ID = "LEDClient"                                         # (3)
 TOPIC = "led"                                                   # (4)
 client = None  # MQTT client instance. See init_mqtt()          # (5)
-led = None       # PWMLED Instance. See init_led()
+led = None     # PWMLED Instance. See init_led()
 
 
 """
-GPIO Related Functions 
+GPIO Related Functions
 """
 def init_led():
     """Create and initialise an LED Object"""
@@ -76,7 +75,7 @@ def set_led_level(data):                                        # (6)
 
 
 """
-MQTT Related Functions and Callbacks 
+MQTT Related Functions and Callbacks
 """
 def on_connect(client, user_data, flags, connection_result_code):           # (7)
     """on_connect is called when our program connects to the MQTT Broker.
@@ -108,7 +107,7 @@ def on_message(client, userdata, msg):                                      # (1
 
     data = None
 
-    try:                                       
+    try:
         data = json.loads(msg.payload.decode("UTF-8"))                      # (12)
     except json.JSONDecodeError as e:
         logger.error("JSON Decode Error: " + msg.payload.decode("UTF-8"))

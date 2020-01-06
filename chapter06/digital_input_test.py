@@ -1,5 +1,5 @@
 """
-File: chapter6/digital_input_test.py
+File: chapter06/digital_input_test.py
 
 Test digital input.
 

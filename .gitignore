@@ -4,3 +4,4 @@ __pycache__
 .AppleDouble
 .DS_Store
 *.log
+.mypy_cache

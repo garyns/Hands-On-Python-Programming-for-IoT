@@ -1,5 +1,5 @@
 """
-File: chapter8/passive_buzzer_rtttl.py
+File: chapter08/passive_buzzer_rtttl.py
 
 Making sound with PWM
 

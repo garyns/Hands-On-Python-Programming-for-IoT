@@ -1,5 +1,5 @@
 """
-File: chapter8/RGBLED_Common_Cathode.py
+File: chapter08/RGBLED_Common_Cathode.py
 
 Control a Common Cathode RGBLED with PWM.
 
@@ -41,7 +41,7 @@ pi.set_PWM_frequency(GPIO_BLUE, 8000)
 
 def set_color(color):                                 # (3)
     """
-    Set REG LED Color. 
+    Set REG LED Color.
     """
     rgb = getrgb(color)                               # (4)
 

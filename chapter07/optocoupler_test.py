@@ -1,5 +1,5 @@
 """
-File: chapter7/optocoupler_test.py
+File: chapter07/optocoupler_test.py
 
 Control an Optocoupler from a GPIO Pin.
 
@@ -15,7 +15,7 @@ GPIO_PIN = 21
 pi = pigpio.pi()
 
 try:
-    # Note:  Circuit is wired as ACTIVE LOW.	
+    # Note:  Circuit is wired as ACTIVE LOW.
 	pi.write(GPIO_PIN, pigpio.LOW) # On.       # (1)
 	print("On")
 	sleep(2)
@@ -25,7 +25,7 @@ try:
 
 except KeyboardInterrupt:
   print("Bye")
-  
+
 finally:
   pi.write(GPIO_PIN, pigpio.HIGH) # Off.
   pi.stop() # PiGPIO cleanup.

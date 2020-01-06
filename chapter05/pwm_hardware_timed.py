@@ -1,5 +1,5 @@
 """
-File: chapter5/pwm_hardware_timed.py
+File: chapter05/pwm_hardware_timed.py
 
 PWM demo using hardware timed PWM and a LED.
 

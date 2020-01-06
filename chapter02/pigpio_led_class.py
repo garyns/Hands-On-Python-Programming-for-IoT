@@ -1,5 +1,5 @@
 """
-File: chapter2/pigpio_led_class.py
+File: chapter02/pigpio_led_class.py
 
 A Class wrapper that mimics GPIOZero.LED()
 

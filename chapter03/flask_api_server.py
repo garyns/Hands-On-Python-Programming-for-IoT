@@ -1,5 +1,5 @@
 """
-File: chapter3/flask_api_server.py
+File: chapter03/flask_api_server.py
 
 A HTTP RESTFul API server to control an LED built using Flask-RESTful.
 

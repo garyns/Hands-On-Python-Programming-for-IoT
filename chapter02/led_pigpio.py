@@ -1,5 +1,5 @@
 """
-File: chapter/led_pigpio.py
+File: chapter02/led_pigpio.py
 
 Blinking an LED using PiGPIO.
 
@@ -8,12 +8,12 @@ Dependencies:
 
 Built and tested with Python 3.7 on Raspberry Pi 4 Model B
 """
-import pigpio           # (1)
+import pigpio                          # (1)
 from time import sleep
 
 GPIO_PIN = 21
-pi = pigpio.pi()                      # (2)
-pi.set_mode(GPIO_PIN, pigpio.OUTPUT)  # (3)
+pi = pigpio.pi()                       # (2)
+pi.set_mode(GPIO_PIN, pigpio.OUTPUT)   # (3)
 
 while True:
   pi.write(GPIO_PIN, 1) # 1 = High = On  (4)

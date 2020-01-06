@@ -1,5 +1,5 @@
 """
-File: chapter8/APA102_LED_Strip.py
+File: chapter08/APA102_LED_Strip.py
 
 Control a APA102 LED Strip.
 

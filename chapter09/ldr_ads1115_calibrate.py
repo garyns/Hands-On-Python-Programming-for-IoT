@@ -1,5 +1,5 @@
 """
-File: chapter9/ldr_ads1115_calibrate.py
+File: chapter09/ldr_ads1115_calibrate.py
 
 Measure maximum and minimum voltages using ADS1115 ADC
 
@@ -11,15 +11,15 @@ Built and tested with Python 3.7 on Raspberry Pi 4 Model B
 from time import sleep
 
 # Below imports are part of Circuit Python and Blinka
-import board 
+import board
 import busio
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 
 # Create the I2C bus & ADS object.
-i2c = busio.I2C(board.SCL, board.SDA)  
+i2c = busio.I2C(board.SCL, board.SDA)
 ads = ADS.ADS1115(i2c)
-analog_channel = AnalogIn(ads, ADS.P0)  #ADS.P0 --> A0 
+analog_channel = AnalogIn(ads, ADS.P0)  #ADS.P0 --> A0
 
 
 # Number of voltage readings to sample
@@ -30,9 +30,9 @@ SAMPLES = 100
 OUTPUT_FILE = "ldr_calibration_config.py"
 
 
-def sample(samples): 
+def sample(samples):
     """
-    Read a number of voltage samples from ADS1115 
+    Read a number of voltage samples from ADS1115
     and return the average voltage
     """
     volts_sum = 0
@@ -72,4 +72,4 @@ if __name__ == '__main__':
         print(output)
 
     finally:
-        i2c.deinit()                                                          
+        i2c.deinit()

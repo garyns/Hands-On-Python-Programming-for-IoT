@@ -1,5 +1,5 @@
 """
-File: chapter2/button_gpiozero.py
+File: chapter02/button_gpiozero.py
 
 Turn on and off an LED with a Button using GPIOZero.
 

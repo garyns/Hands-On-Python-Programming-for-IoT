@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 """
-File: chapter8/OLED_CPU_Temp.py
+File: chapter08/OLED_CPU_Temp.py
 
 Control a OLED Display.
 

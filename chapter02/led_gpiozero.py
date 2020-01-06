@@ -1,5 +1,5 @@
 """
-File: chapter2/led_gpiozero.py
+File: chapter02/led_gpiozero.py
 
 Blinking an LED using GPIOZero.
 

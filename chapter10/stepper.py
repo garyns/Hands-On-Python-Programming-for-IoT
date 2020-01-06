@@ -24,7 +24,7 @@ INPUT_4A_GPIO = 21  # Orange Coil 4 Connected to 4Y
 # Influences speed of motor.
 # Too low a value and motor will not step
 # or will step erratically.
-STEP_DELAY_SECS = 0.005  # (3)
+STEP_DELAY_SECS = 0.002  # (3)
 
 # Coil GPIOs as a list.
 coil_gpios = [                                                      # (4)
@@ -43,80 +43,82 @@ def off():
     for gpio in coil_gpios:                                         # (6)
         pi.write(gpio, pigpio.HIGH)  # Coil off
 
-
-off()  # All coils off.
+off()  # All coils off
 
 # Enable Channels (always high)
-pi.set_mode(CHANNEL_1_ENABLE_GPIO, pigpio.OUTPUT)  # (7)
+pi.set_mode(CHANNEL_1_ENABLE_GPIO, pigpio.OUTPUT)                   # (7)
 pi.write(CHANNEL_1_ENABLE_GPIO, pigpio.HIGH)
 pi.set_mode(CHANNEL_2_ENABLE_GPIO, pigpio.OUTPUT)
 pi.write(CHANNEL_2_ENABLE_GPIO, pigpio.HIGH)
 
-# Half step sequence, 4096 steps per full rotation.
+
 COIL_HALF_SEQUENCE = [                                              # (8)
-    [1, 0, 0, 1],
-    [1, 0, 0, 0],  # (a)
-    [1, 1, 0, 0],
-    [0, 1, 0, 0],  # (b)
-    [0, 1, 1, 0],
-    [0, 0, 1, 0],  # (c)
-    [0, 0, 1, 1],
-    [0, 0, 0, 1]   # (d)
+    [0, 1, 1, 1],
+    [0, 0, 1, 1],   # (a)
+    [1, 0, 1, 1],
+    [1, 0, 0, 1],   # (b)
+    [1, 1, 0, 1],
+    [1, 1, 0, 0],   # (c)
+    [1, 1, 1, 0],
+    [0, 1, 1, 0]    # (d)
 ]
 
-# Full step sequence, 2048 steps per full rotation.
-COIL_FULL_SEQUENCE = [                                              # (9)
-    [1, 0, 0, 0],  # (a)
-    [0, 1, 0, 0],  # (b)
-    [0, 0, 1, 0],  # (c)
-    [0, 0, 0, 1]   # (d)
+
+COIL_FULL_SEQUENCE = [
+    [0, 0, 1, 1],   # (a)
+    [1, 0, 0, 1],   # (b)
+    [1, 1, 0, 0],   # (c)
+    [0, 1, 1, 0]    # (d)
 ]
 
-# Use half or full sequence (by default)?
-coil_sequence = COIL_HALF_SEQUENCE
+
+sequence = COIL_HALF_SEQUENCE                                       # (9)
+#sequence = COIL_FULL_SEQUENCE
 
 
-def rotate(steps=1, sequence=None):                                 # (10)
+# For rotate() to keep track of the sequence row it is on.
+sequence_row = 0
+
+
+def rotate(steps):                                                  # (10)
     """ Rotate number of steps
-        use -steps to rotate in reverse """
-    if sequence == None:
-        sequence = COIL_HALF_SEQUENCE
+        use -steps to rotate in reverse """    
 
-    if steps < 0:                                                   # (11)
-        # Reverse Sequence
-        sequence = sequence[::-1]
+    global sequence_row
 
-    for step in range(abs(steps) // len(sequence)):                 # (12)
-        # print("\nStep #{}".format(step+1))
+    direction = +1
 
-        for gpio_states in sequence:                                # (13)
-            # print("  {}".format(gpio_states))
+    if steps < 0:
+        direction = -1
 
-            for i in range(len(gpio_states)):                       # (14)
-                coil_gpio = coil_gpios[i]  # (14)
-                high_or_low = gpio_states[i]
-                # print("    GPIO {} is {}".format(coil_gpio, high_or_low))
-                pi.write(coil_gpio, high_or_low)                    # (15)
+    for step in range(abs(steps)):                                  # (11)
 
-            # Delay after step.            
-            sleep(STEP_DELAY_SECS)                                  # (16)
+      coil_states = sequence[sequence_row]                          # (12)
 
-    off()  # Turn stepper coils off
+      for i in range(len(sequence[sequence_row])):
+
+          gpio = coil_gpios[i]                                      # (13)
+          state = sequence[sequence_row][i] # 0 or 1                # (14)
+          pi.write(gpio, state)                                     # (15)
+
+          sleep(STEP_DELAY_SECS)
+
+      sequence_row += direction                                     # (16)
+
+      if sequence_row < 0:
+          sequence_row = len(sequence) - 1
+      elif sequence_row >= len(sequence):
+          sequence_row = 0
 
 
 if __name__ == '__main__':
 
-    try:
-        steps = 2048  # Steps for full 360 degree rotation.
-        print("Full Sequence = {} steps for full 360 degree rotation.".format(steps))
-        rotate(steps, COIL_FULL_SEQUENCE)
-        rotate(-steps, COIL_FULL_SEQUENCE)
-        sleep(1)
+    try:                                                            # (17)
+        steps = 4096  # Steps for HALF stepping sequence.
+        print("{} steps for full 360 degree rotation.".format(steps))
+        rotate(steps)  # Rotate one direction
+        rotate(-steps) # Rotate reverse direction
 
-        steps *= 2  # * 2 since twice resolution for half stepping.
-        print("Half Sequence = {} steps for full 360 degree rotation.".format(steps))
-        rotate(steps, COIL_HALF_SEQUENCE)
-        rotate(-steps, COIL_HALF_SEQUENCE)
 
     finally:
         off()  # Turn stepper coils off

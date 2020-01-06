@@ -1,5 +1,5 @@
 """
-File: chapter5/analog_input_ads1115.py
+File: chapter05/analog_input_ads1115.py
 
 Read analog input from an ADS1115 ADC I2C module.
 
@@ -34,7 +34,7 @@ duty_cycle_ch = AnalogIn(ads, ADS.P1) #ADS.P1 --> A1
 
 if __name__ == '__main__':
     try:
-        while True:            
+        while True:
             output = ("Frequency Pot (A0) value={:>5} volts={:>5.3f} "
                       "Duty Cycle Pot (A1) value={:>5} volts={:>5.3f}")
             output = output.format(frequency_ch.value, frequency_ch.voltage,    # (5)

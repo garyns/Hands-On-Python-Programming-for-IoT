@@ -1,5 +1,5 @@
 """
-File: chapter3/flask_ws_server.py
+File: chapter03/flask_ws_server.py
 
 A Flask based Web Sockets server to control an LED built using Flask-SocketIO.
 

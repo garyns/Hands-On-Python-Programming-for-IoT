@@ -1,5 +1,5 @@
 """
-File: chapter8/RGBLED_Common_Anode.py
+File: chapter08/RGBLED_Common_Anode.py
 
 Control a Common Anode RGBLED with PWM.
 

@@ -1,5 +1,5 @@
 """
-File: chapter5/pwm_hardware.py
+File: chapter05/pwm_hardware.py
 
 PWM demo using hardware PWM and a LED.
 
@@ -69,9 +69,9 @@ MAX_FREQ = 60 # max 125000000
 def map_value(in_v, in_min, in_max, out_min, out_max):
     """Helper method to map an input value (v_in)
     between alternative max/min ranges."""
-    
+
     v = (in_v - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
-    if v < out_min: v = out_min 
+    if v < out_min: v = out_min
     elif v > out_max: v = out_max
     return v
 
@@ -91,7 +91,7 @@ if __name__ == '__main__':
             duty_cycle = int(map_value(duty_cycle_ch.voltage,
                                        MIN_A_IN_VOLTS, MAX_A_IN_VOLTS,
                                        MIN_DUTY_CYCLE, MAX_DUTY_CYCLE))
-            
+
             duty_cycle_percent = int((duty_cycle/MAX_DUTY_CYCLE) * 100)
 
             # Set Hardware PWM Duty Cycle and Frequency.
@@ -99,7 +99,7 @@ if __name__ == '__main__':
             pi.hardware_PWM(LED_GPIO_PIN, frequency, duty_cycle)
 
             # Raw Analog values.
-            output1 = ("Frequency Pot (A0) value={:>5} volts={:>5.3f} " 
+            output1 = ("Frequency Pot (A0) value={:>5} volts={:>5.3f} "
                       "Duty Cycle Pot (A1) value={:>5} volts={:>5.3f}")
             output1 = output1.format(frequency_ch.value, frequency_ch.voltage, \
                                    duty_cycle_ch.value, duty_cycle_ch.voltage)
@@ -109,14 +109,14 @@ if __name__ == '__main__':
             # Value mapped and formatted output.
             output2 = "Frequency {:>5}Hz    Duty Cycle {:>3}%" \
                       .format(frequency, duty_cycle_percent)
-                      
+
             print(output2)
 
             sleep(0.05)
 
-    except KeyboardInterrupt:      
+    except KeyboardInterrupt:
       i2c.deinit()                                                               # (6)
-      
+
       # Revert GPIO to basic output and make LOW to turn LED off.
       pi.set_mode(LED_GPIO_PIN, pigpio.OUTPUT)
       pi.write(LED_GPIO_PIN, pigpio.LOW)

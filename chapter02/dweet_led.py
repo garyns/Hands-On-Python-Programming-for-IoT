@@ -1,5 +1,5 @@
 """
-File: chapter2/dweet_led.py
+File: chapter02/dweet_led.py
 
 A Python program to control an LED using the public dweet.io service.
 

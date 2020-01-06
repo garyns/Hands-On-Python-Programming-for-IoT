@@ -1,5 +1,5 @@
 """
-File: chapter8/dht_measure.py
+File: chapter09/dht_measure.py
 
 Measure temperature and humidity with DHT sensor.
 
@@ -8,10 +8,10 @@ Dependencies:
 
 Built and tested with Python 3.7 on Raspberry Pi 4 Model B
 """
-from pigpio_dht import DHT11, DHT22      # (1)
+from pigpio_dht import DHT11, DHT22          # (1)
 
-SENSOR_GPIO = 21                         
-sensor = DHT11(SENSOR_GPIO)              # (2)
+SENSOR_GPIO = 21
+sensor = DHT11(SENSOR_GPIO)                  # (2)
 #sensor = DHT22(SENSOR_GPIO)
 
 if __name__ == '__main__':

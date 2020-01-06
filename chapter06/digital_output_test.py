@@ -1,5 +1,5 @@
 """
-File: chapter6/digital_output_test.py
+File: chapter06/digital_output_test.py
 
 Test digital output.
 

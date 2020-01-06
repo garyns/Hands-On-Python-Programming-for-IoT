@@ -1,5 +1,5 @@
 """
-File: chapter6/analog_pwm_output_test.py
+File: chapter06/analog_pwm_output_test.py
 
 Create PWM output signal.
 

@@ -1,10 +1,10 @@
 """
-File: chapter5/pwm_software.py
+File: chapter05/pwm_software.py
 
 PWM demo using software PWM and a LED.
 
 Dependencies:
-  pip3 install pigpio adafruit-circuitpython-ads1x15 rpi.gpio  
+  pip3 install pigpio adafruit-circuitpython-ads1x15 rpi.gpio
 
 Built and tested with Python 3.7 on Raspberry Pi 4 Model B
 """
