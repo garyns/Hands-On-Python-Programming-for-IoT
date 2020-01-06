@@ -6,5 +6,5 @@
 * `mqtt_led_server.py` - Paho MQTT Pub/Sub example to control a LED
 * `mosquitto_pyiot.conf` - Mosquitto MQTT Broker configuration file to enable Web Sockets and Web Server
 * `mosquitto_www` - Folder containing HTML and JavaScript files for MQTT Web Page client
-  * `mosquitto_www/index.html` - MQTT Web Page Client to control LED
-  * `mosquitto_www/*.js` - JavaScript dependencies as used in index.html
+* `mosquitto_www/index.html` - MQTT Web Page Client to control LED
+* `mosquitto_www/*.js` - JavaScript dependencies as used in index.html

@@ -1,8 +1,4 @@
-<!-- File: chapter4/mosquitto_www/index.html -->
-
-<!--https://github.com/eclipse/paho.mqtt.javascript-->
-
-
+<!-- File: chapter04/mosquitto_www/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +11,7 @@
         const TOPIC   = "led";                                         // (3)
 
         // Web Socket MQTT Client Object.
-        //const client = new Paho.MQTT.Client(location.hostname, Number(location.port));  // (4)
-        const client = new Paho.Client("rpi4.local", 8083, CLIENT_ID);  // ()  XXXXXXXXXXXXXXXXXXXXXXXXXx
+        const client = new Paho.MQTT.Client(location.hostname, Number(location.port)); // (4)
 
         // Callback when client has connected to Broker.
         onConnectionSuccess = function(data) {                                    // (5)
