@@ -1,5 +1,5 @@
 """
-File: chapter02/dweet_led.py
+File: chapter13/dweet_led.py (This is an copy of the file chapter02/dweet_led.py)
 
 A Python program to control an LED using the public dweet.io service.
 
@@ -140,7 +140,7 @@ def process_dweet(dweet):
     if not 'state' in dweet:
         return
 
-    led_state = dweet['state']
+    led_state = dweet['state'].lower().strip()
 
     if led_state == last_led_state:                                                # (14)
         return; # LED is already in requested state.
