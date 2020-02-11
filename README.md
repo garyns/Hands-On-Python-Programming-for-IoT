@@ -10,7 +10,7 @@ The code in this repository accompanies the Packt Book "Hands-On Python Programm
 
 ## [Chapter 4](chapter04) - Distributed Systems with Python and MQTT
 
-## [Chapter 5](chapter05) - Connecting Python to the Physical World
+## [Chapter 5](chapter05) - Connecting Your Raspberry Pi to the Physical World
 
 ## [Chapter 6](chapter06) - Electronics 101 for the Software Engineer
 

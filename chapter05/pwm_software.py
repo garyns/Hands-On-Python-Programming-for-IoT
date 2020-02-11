@@ -80,9 +80,6 @@ if __name__ == '__main__':
             duty_cycle = int(map_value(duty_cycle_ch.voltage, MIN_A_IN_VOLTS, MAX_A_IN_VOLTS, MIN_DUTY_CYCLE, MAX_DUTY_CYCLE))
             duty_cycle_percent = int((duty_cycle/MAX_DUTY_CYCLE) * 100)
 
-            #
-            # PWM CONTROL IS HERE
-            #
             # Set Software PWM Duty Cycle and Frequency.
             # https://sourceforge.net/p/raspberry-gpio-python/wiki/PWM
             pwm.ChangeDutyCycle(duty_cycle)

@@ -55,18 +55,18 @@ MAX_A_IN_VOLTS = 3.3 - A_IN_EDGE_ADJ
 
 # Max/Min Duty Cycle value as per PiGPIO documentation
 # for hardware_PWM()
-MIN_DUTY_CYCLE = 0
+MIN_DUTY_CYCLE = 0                                                                            # (1)
 MAX_DUTY_CYCLE = 1000000
 
 
 # Max/Min Frequency value as per PiGPIO documentation
 # for hardware_PWM() is 0 to 125 million hertz, but we're
 # capping it at 60 hertz for LED visual and piscope demonstration.
-MIN_FREQ = 0
+MIN_FREQ = 0          #(2)
 MAX_FREQ = 60 # max 125000000
 
 
-def map_value(in_v, in_min, in_max, out_min, out_max):
+def map_value(in_v, in_min, in_max, out_min, out_max):                                        # (3)
     """Helper method to map an input value (v_in)
     between alternative max/min ranges."""
 
@@ -82,13 +82,13 @@ if __name__ == '__main__':
             # Frequency value mapped from Analog Input Channel
             # to PiGPIO expected range
             # (capped at 60Hz per above comments).
-            frequency = int(map_value(frequency_ch.voltage,
+            frequency = int(map_value(frequency_ch.voltage,                                   # (4)
                                       MIN_A_IN_VOLTS, MAX_A_IN_VOLTS,
                                       MIN_FREQ, MAX_FREQ))
 
             # Duty Cycle value mapped from Analog Input
             # Channel to PiGPIO expected range.
-            duty_cycle = int(map_value(duty_cycle_ch.voltage,
+            duty_cycle = int(map_value(duty_cycle_ch.voltage,                                 # (5)
                                        MIN_A_IN_VOLTS, MAX_A_IN_VOLTS,
                                        MIN_DUTY_CYCLE, MAX_DUTY_CYCLE))
 
@@ -96,7 +96,7 @@ if __name__ == '__main__':
 
             # Set Hardware PWM Duty Cycle and Frequency.
             # http://abyz.me.uk/rpi/pigpio/python.html#hardware_PWM
-            pi.hardware_PWM(LED_GPIO_PIN, frequency, duty_cycle)
+            pi.hardware_PWM(LED_GPIO_PIN, frequency, duty_cycle)                              # (6)
 
             # Raw Analog values.
             output1 = ("Frequency Pot (A0) value={:>5} volts={:>5.3f} "
@@ -115,7 +115,7 @@ if __name__ == '__main__':
             sleep(0.05)
 
     except KeyboardInterrupt:
-      i2c.deinit()                                                               # (6)
+      i2c.deinit()
 
       # Revert GPIO to basic output and make LOW to turn LED off.
       pi.set_mode(LED_GPIO_PIN, pigpio.OUTPUT)
