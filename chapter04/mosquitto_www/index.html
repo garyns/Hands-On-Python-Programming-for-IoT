@@ -4,32 +4,32 @@
 <head>
     <title>MQTT Web Socket Example</title>
     <script src="./jquery.min.js"></script>
-    <script src="./paho-mqtt.js"></script>                           <!-- (1) -->
+    <script src="./paho-mqtt.js"></script>                                                   <!-- (1) -->
     <script type="text/javascript" charset="utf-8">
 
-        const CLIENT_ID = String(Math.floor(Math.random() * 10e16))    // (2)
-        const TOPIC   = "led";                                         // (3)
+        const CLIENT_ID = String(Math.floor(Math.random() * 10e16))                            // (2)
+        const TOPIC   = "led";                                                                 // (3)
 
         // Web Socket MQTT Client Object.
-        const client = new Paho.MQTT.Client(location.hostname, Number(location.port)); // (4)
+        const client = new Paho.Client(location.hostname, Number(location.port), CLIENT_ID);   // (4)
 
         // Callback when client has connected to Broker.
-        onConnectionSuccess = function(data) {                                    // (5)
+        onConnectionSuccess = function(data) {                                                 // (5)
             console.log("Connected to MQTT Broker");
             $("#connected").html("Yes");
             $("input[type=range].brightnessLevel").attr("disabled", null);
 
-            // Receive LED level messages.                                        // (6)
+            // Receive LED level messages.                                                     // (6)
             client.subscribe(TOPIC);
         };
 
-        client.connect({                                                          // (7)
+        client.connect({                                                                       // (7)
            onSuccess: onConnectionSuccess,
            reconnect: true
          });
 
         // Callback when client looses it's connection to Broker.
-        client.onConnectionLost = function onConnectionLost(data) {               // (8)
+        client.onConnectionLost = function onConnectionLost(data) {                            // (8)
 
             if (data.errorCode !== 0) {
               console.log("Disconnected from Connected to MQTT Broker with error " + data.errorMessage);
@@ -42,7 +42,7 @@
         };
 
         // Callback when a new message arrives at a subscribed topic.
-        client.onMessageArrived = function onMessageArrived(message) {            // (9)
+        client.onMessageArrived = function onMessageArrived(message) {                         // (9)
 
             console.log("onMessageArrived:" + message.payloadString + " for topic " + message.destinationName);
 
@@ -55,7 +55,7 @@
         }
 
 
-        $(document).ready(function() {                                            // (10)
+        $(document).ready(function() {                                                         // (10)
 
             $("#clientId").html(CLIENT_ID);
 
@@ -68,13 +68,13 @@
                  };
 
                 // Publish LED brightness.
-                var message = new Paho.Message(                                   // (11)
+                var message = new Paho.Message(                                                // (11)
                    JSON.stringify(payload)
                 );
 
-                message.destinationName = TOPIC;                                  // (12)
+                message.destinationName = TOPIC;                                               // (12)
                 message.qos = 2;
-                message.retained = true;                                          // (13)
+                message.retained = true;                                                       // (13)
                 client.send(message);
             });
         });
