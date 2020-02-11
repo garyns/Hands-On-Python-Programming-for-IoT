@@ -19,7 +19,7 @@ except:
 
 try:
     import pigpio
-    print('PiGPIO    Available')
+    print('PiGPIO     Available')
 except:
-    print('PiGPIO    Unavailable. Install with "pip install pigpio"')
+    print('PiGPIO     Unavailable. Install with "pip install pigpio"')
 

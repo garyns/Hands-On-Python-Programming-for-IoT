@@ -23,17 +23,17 @@ pi.write(LED_GPIO_PIN, 0) # LED Off
 
 
 # Button provides 'Input'
-pi.set_mode(BUTTON_GPIO_PIN, pigpio.INPUT)                            # (1)
-pi.set_pull_up_down(BUTTON_GPIO_PIN, pigpio.PUD_UP)                   # (2)
-pi.set_glitch_filter(BUTTON_GPIO_PIN, 10000) # microseconds debounce  # (3)
+pi.set_mode(BUTTON_GPIO_PIN, pigpio.INPUT)                                    # (1)
+pi.set_pull_up_down(BUTTON_GPIO_PIN, pigpio.PUD_UP)                           # (2)
+pi.set_glitch_filter(BUTTON_GPIO_PIN, 10000) # microseconds debounce          # (3)
 
 
 # Button pressed handler
-def pressed(gpio_pin, level, tick):      # (4)
+def pressed(gpio_pin, level, tick):                                           # (4)
     # Get current pin state for LED.
-    led_state = pi.read(LED_GPIO_PIN)    # (5)
+    led_state = pi.read(LED_GPIO_PIN)                                         # (5)
 
-    if led_state == 1:                   # (6)
+    if led_state == 1:                                                        # (6)
         # LED is on, so turn it off.
         pi.write(LED_GPIO_PIN, 0) # 0 = Pin Low = Led Off
         print("Button pressed: Led is off")
@@ -44,7 +44,7 @@ def pressed(gpio_pin, level, tick):      # (4)
 
 
 # Register button handler.
-pi.callback(BUTTON_GPIO_PIN, pigpio.FALLING_EDGE, pressed)  # (7)
+pi.callback(BUTTON_GPIO_PIN, pigpio.FALLING_EDGE, pressed)                    # (7)
 
 print("Press button to turn LED on and off.")
 

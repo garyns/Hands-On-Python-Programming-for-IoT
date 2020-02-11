@@ -44,11 +44,11 @@ class PiGPIOLED:
             while self.is_blinking:
                 self.pi.write(self.gpio_pin, 1)   # On
 
-                sleep(PigpioLED.blink_rate_secs/2)
+                sleep(PiGPIOLED.blink_rate_secs/2)
 
                 if self.is_blinking:
                   self.pi.write(self.gpio_pin, 0) # Off
-                  sleep(PigpioLED.blink_rate_secs/2)
+                  sleep(PiGPIOLED.blink_rate_secs/2)
 
         if background:
             # daemon=True prevents our thread below from preventing the main thread
