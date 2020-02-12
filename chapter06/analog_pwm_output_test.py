@@ -11,7 +11,7 @@ Built and tested with Python 3.7 on Raspberry Pi 4 Model B
 import pigpio
 from time import sleep
 
-GPIO_PIN=21
+GPIO_PIN = 21
 pi = pigpio.pi()
 
 # 8000 max hardware timed frequency by default pigpiod configuration.
@@ -25,7 +25,6 @@ try:
        for duty_cycle_pc in duty_cycle_percentages:                         # (3)
            duty_cycle = int(255 * duty_cycle_pc / 100)
            estimated_voltage = max_voltage * duty_cycle_pc / 100
-           print(duty_cycle)
            print("Duty Cycle {}%, estimated voltage {} volts".format(duty_cycle_pc, estimated_voltage))
            pi.set_PWM_dutycycle(GPIO_PIN, duty_cycle)                       # (4)
            sleep(5)

@@ -11,12 +11,12 @@ Built and tested with Python 3.7 on Raspberry Pi 4 Model B
 import pigpio
 from time import sleep
 
-GPIO_PIN=21
+GPIO_PIN = 21
 pi = pigpio.pi()
-pi.set_mode(GPIO_PIN, pigpio.OUTPUT)               # (1)
+pi.set_mode(GPIO_PIN, pigpio.OUTPUT)                   # (1)
 
 try:
-    while True:                                    # (2)
+    while True:                                        # (2)
         # Alternate between HIGH and LOW
         state = pi.read(GPIO_PIN); # 1 or 0
         new_state = (int)(not state) # 1 or 0
