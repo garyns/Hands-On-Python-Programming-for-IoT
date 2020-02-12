@@ -21,7 +21,7 @@ See this link for more information and additional formats: https://pillow.readth
 """
 from time import sleep
 import pigpio
-from PIL.ImageColor import getrgb                     # (1)
+from PIL.ImageColor import getrgb                                              # (1)
 
 
 # Common Cathode connected to GND,
@@ -32,27 +32,27 @@ GPIO_BLUE  = 21
 
 pi = pigpio.pi()
 
-pi.set_PWM_range(GPIO_RED, 255)                       # (2)
+pi.set_PWM_range(GPIO_RED, 255)                                                # (2)
 pi.set_PWM_range(GPIO_GREEN, 255)
 pi.set_PWM_range(GPIO_BLUE, 255)
 pi.set_PWM_frequency(GPIO_RED, 8000)
 pi.set_PWM_frequency(GPIO_GREEN, 8000)
 pi.set_PWM_frequency(GPIO_BLUE, 8000)
 
-def set_color(color):                                 # (3)
+def set_color(color):                                                          # (3)
     """
     Set REG LED Color.
     """
-    rgb = getrgb(color)                               # (4)
+    rgb = getrgb(color)                                                        # (4)
 
     print("LED is {} ({})".format(color, rgb))
 
-    pi.set_PWM_dutycycle(GPIO_RED,   rgb[0])          # (5)
+    pi.set_PWM_dutycycle(GPIO_RED,   rgb[0])                                   # (5)
     pi.set_PWM_dutycycle(GPIO_GREEN, rgb[1])
     pi.set_PWM_dutycycle(GPIO_BLUE,  rgb[2])
 
 
-def cycle_colors(colors=("red", "green", "blue"), delay_secs=1):   # (6)
+def cycle_colors(colors=("red", "green", "blue"), delay_secs=1):               # (6)
     """
     Cycle RGB LED through a list of colors.
     """
@@ -62,7 +62,7 @@ def cycle_colors(colors=("red", "green", "blue"), delay_secs=1):   # (6)
         sleep(delay_secs)
 
 
-def rainbow_example(loops=1, delay_secs=0.01):                     # (7)
+def rainbow_example(loops=1, delay_secs=0.01):                                 # (7)
     """
     Cycle RGB LED through a range of colors.
     """
