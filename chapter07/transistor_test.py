@@ -24,31 +24,31 @@ pi.set_PWM_frequency(GPIO_PIN, 8000)
 pi.set_PWM_range(GPIO_PIN, 100)                                      # (1)
 
 try:
-	pi.write(GPIO_PIN, pigpio.HIGH) # On.                        # (2)
-	print("On")
-	sleep(2)
-	pi.write(GPIO_PIN, pigpio.LOW)  # Off.
-	print("Off")
-	sleep(2)
+    pi.write(GPIO_PIN, pigpio.HIGH) # On.                            # (2)
+    print("On")
+    sleep(2)
+    pi.write(GPIO_PIN, pigpio.LOW)  # Off.
+    print("Off")
+    sleep(2)
 
-	# Fade In.
-	for duty_cycle in range(0, 100):                             # (3)
-	    pi.set_PWM_dutycycle(GPIO_PIN, duty_cycle)
-	    print("Duty cycle {}%".format(duty_cycle))
-	    sleep(0.05)
+    # Fade In.
+    for duty_cycle in range(0, 100):                                 # (3)
+        pi.set_PWM_dutycycle(GPIO_PIN, duty_cycle)
+        print("Duty cycle {}%".format(duty_cycle))
+        sleep(0.05)
 
-	# Fade Out.
-	for duty_cycle in range(100, 0, -1):                         # (4)
-	    pi.set_PWM_dutycycle(GPIO_PIN, duty_cycle)
-	    print("Duty Cycle {}%".format(duty_cycle))
-	    sleep(0.05)
+    # Fade Out.
+    for duty_cycle in range(100, 0, -1):                             # (4)
+        pi.set_PWM_dutycycle(GPIO_PIN, duty_cycle)
+        print("Duty Cycle {}%".format(duty_cycle))
+        sleep(0.05)
 
-	sleep(2)
+    sleep(2)
 
 except KeyboardInterrupt:
-  print("Bye")
+    print("Bye")
 
 finally:
-  pi.write(GPIO_PIN, pigpio.LOW) # Off.
-  pi.stop() # PiGPIO cleanup.
+    pi.write(GPIO_PIN, pigpio.LOW) # Off.
+    pi.stop() # PiGPIO cleanup.
 

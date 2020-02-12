@@ -16,17 +16,17 @@ pi = pigpio.pi()
 
 try:
     # Note:  Circuit is wired as ACTIVE LOW.
-	pi.write(GPIO_PIN, pigpio.LOW) # On.       # (1)
-	print("On")
-	sleep(2)
-	pi.write(GPIO_PIN, pigpio.HIGH)  # Off.    # (2)
-	print("Off")
-	sleep(2)
+    pi.write(GPIO_PIN, pigpio.LOW) # On.                       # (1)
+    print("On")
+    sleep(2)
+    pi.write(GPIO_PIN, pigpio.HIGH)  # Off.                    # (2)
+    print("Off")
+    sleep(2)
 
 except KeyboardInterrupt:
-  print("Bye")
+    print("Bye")
 
 finally:
-  pi.write(GPIO_PIN, pigpio.HIGH) # Off.
-  pi.stop() # PiGPIO cleanup.
+    pi.write(GPIO_PIN, pigpio.HIGH) # Off.
+    pi.stop() # PiGPIO cleanup.
 
