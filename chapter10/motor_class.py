@@ -20,13 +20,13 @@ class Motor:
           self.logic_1_gpio = logic_1_gpio
           self.logic_2_gpio = logic_2_gpio	  
 
-          pi.set_PWM_range(self.enable_gpio, 100)  # speed is 0..100               # (6) 
+          pi.set_PWM_range(self.enable_gpio, 100)  # speed is 0..100               # (1)
 
 	      # Set default state - motor not spinning and set for forward direction.
-          self.set_speed(0)                                                        # (7)
+          self.set_speed(0)                                                        # (2)
           self.right()
 
-    def right(self, speed=None):                                                   # (8)
+    def right(self, speed=None):                                                   # (3)
         """
         Spin motor right.
         """
@@ -37,7 +37,7 @@ class Motor:
         self.pi.write(self.logic_2_gpio, pigpio.HIGH)
 
 
-    def left(self, speed=None):                                                    # (9)
+    def left(self, speed=None):                                                    # (4)
         """
         Spin motor left.
         """
@@ -48,7 +48,7 @@ class Motor:
         self.pi.write(self.logic_2_gpio, pigpio.LOW)
 
         
-    def is_right(self):                                                            # (10)
+    def is_right(self):                                                            # (5)
         """
         Is motor set to spin right?
         """
@@ -56,7 +56,7 @@ class Motor:
               and self.pi.read(self.logic_2_gpio))   # HIGH
 
 
-    def set_speed(self, speed):                                                    # (11)
+    def set_speed(self, speed):                                                    # (6)
         """
         Set motor speed using PWM.
         """
@@ -64,7 +64,7 @@ class Motor:
         self.pi.set_PWM_dutycycle(self.enable_gpio, speed)
 
 
-    def brake(self):                                                               # (12)
+    def brake(self):                                                               # (7)
         """
         Motor Brake (Using L293D).
         """
@@ -81,7 +81,7 @@ class Motor:
             self.left()
 
 
-    def brake_pwm(self, brake_speed=100, delay_millisecs=50):                      # (13)
+    def brake_pwm(self, brake_speed=100, delay_millisecs=50):                      # (8)
         """
         Motor Brake (Alternative using Reverse PWM).
         You may need to adjust brake_speed and delay_millisecs
