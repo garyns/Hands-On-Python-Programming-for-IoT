@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
 # DHT Temperature/Humidity Sensor
-GPIO = 24                                                                          # (1)
+GPIO = 24                                                                                # (1)
 
 # ThingSpeak Configuration
 WRITE_API_KEY = ""  # <<<< ADD YOUR WRITE API KEY HERE
