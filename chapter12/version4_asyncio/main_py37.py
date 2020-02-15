@@ -10,8 +10,7 @@ Built and tested with Python 3.7 on Raspberry Pi 4 Model B
 """
 import adafruit_ads1x15.ads1115 as ADS
 import pigpio
-
-from signal import pause
+from time import sleep
 import asyncio
 import logging
 import sys
@@ -21,7 +20,7 @@ from BUTTON import BUTTON
 from POT import POT
 from LED import LED
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("Main")
 
 pi = pigpio.pi()
@@ -95,38 +94,36 @@ LEDS = [
 led_index = 0
 
 
-async def main():
 
+async def main():                                                                        # <<<<<<< DIFFERENCE
     tasks = []
 
     # Register the LEDs.
     for led in LEDS:
-       tasks.append(asyncio.create_task(led.run()))
+        tasks.append(
+            asyncio.create_task(
+                led.run()
+            ))
 
-    # Register and start Button and Pot
-    tasks.append(asyncio.create_task(pot.run()))
-    tasks.append(asyncio.create_task(button.run()))
+    tasks.append(
+          asyncio.create_task(
+              pot.run()
+          ))
 
-    await asyncio.gather(*tasks, return_exceptions=True)
+    tasks.append(
+        asyncio.create_task(
+            button.run()
+        ))
 
+    await asyncio.gather(*tasks)  # *tasks unpacks list into args for .gather()
 
-async def mainX():
-
-    # Register and start Button and Pot
-    #await asyncio.create_task(pot.run())
-    await asyncio.create_task(button.run())
-
-
-    # Register the LEDs.
-    for led in LEDS:
-       await asyncio.create_task(led.run())
-
-
-    await pause()
 
 if __name__ == "__main__":
 
+    assert sys.version_info >= (3, 7), "Python 3.7+ Required"
+
     try:
+        logger.info("Python 3.7+ Version.")
         logger.info("Version 4 - Asynchronous IO Example. Press Control + C To Exit.")
 
         # Initialise all LEDs
@@ -136,9 +133,31 @@ if __name__ == "__main__":
 
         logger.info("Turning the Potentiometer dial will change the rate for LED #{}".format(led_index))
 
-        asyncio.run(main())
 
-        #pause()
+        ##
+        ## The Asynchronous IO (Python 3.7)
+        ##
+
+        asyncio.run(main())                                                              # <<<<<<< DIFFERENCE
+
+
+        ##
+        ## Approach taken in main.py.
+        ##
+
+        # # Get (create) an event loop.
+        # loop = asyncio.get_event_loop()
+        #
+        # # Register the LEDs.
+        # for led in LEDS:
+        #     loop.create_task(led.run())
+        #
+        # # Register Button and Pot
+        # loop.create_task(pot.run())
+        # loop.create_task(button.run())
+        #
+        # # Start the event loop.
+        # loop.run_forever()
 
     except KeyboardInterrupt:
         LED.set_rate_all(0) # Turn all LEDs off.
