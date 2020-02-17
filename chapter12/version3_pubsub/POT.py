@@ -57,6 +57,7 @@ class POT:
         self.last_value = self.get_value() # Initialise last value.
 
         self.poll_secs = poll_secs
+        self.is_polling = False
 
         self._thread = None
         self._start() # Start polling ADC

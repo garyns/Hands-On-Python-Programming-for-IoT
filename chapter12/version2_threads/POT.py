@@ -49,6 +49,7 @@ class POT:
 
         self.last_value = self.get_value() # Initialise last value.
 
+        self.is_polling = False
         self.poll_secs = poll_secs
 
         self._thread = None
