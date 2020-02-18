@@ -1,3 +1,14 @@
+"""
+File: chapter13/thingspeak_dht_http.py
+
+Publish temperature and humidity values from a DHT11 or DHT22 sensor to ThingSpeak using the
+ThingSpeak RESTFul-API.
+
+Dependencies:
+  pip3 install pigpio-dht requests
+
+Built and tested with Python 3.7 on Raspberry Pi 4 Model B
+"""
 from pigpio_dht import DHT11, DHT22
 import requests
 from datetime import datetime

@@ -1,3 +1,14 @@
+"""
+File: chapter13/thingspeak_dht_mqtt.py
+
+Publish temperature and humidity values from a DHT11 or DHT22 sensor to ThingSpeak using MQTT.
+
+Dependencies:
+  pip3 install pigpio-dht paho-mqtt
+
+Built and tested with Python 3.7 on Raspberry Pi 4 Model B
+"""
+
 from pigpio_dht import DHT11, DHT22
 import paho.mqtt.publish as publish
 from datetime import datetime
