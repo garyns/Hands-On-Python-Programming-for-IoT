@@ -100,7 +100,7 @@ class POT:
 
         if self._thread is not None:
             # Thread already exists.
-            logger.warn("Polling Thread Aleady Started.")
+            logger.warn("Polling Thread Already Started.")
             return
 
         self.is_polling = True
