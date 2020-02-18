@@ -4,7 +4,7 @@ File: chapter12/version3_pubsub/BUTTON.py
 BUTTON Class
 
 Dependencies:
-  pip3 install pubsub pigpio
+  pip3 install pypubsub pigpio
 
 Built and tested with Python 3.7 on Raspberry Pi 4 Model B
 """

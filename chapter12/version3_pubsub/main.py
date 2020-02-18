@@ -4,7 +4,7 @@ File: chapter12/version3_pubsub/main.py
 Publisher-Subscriber Example
 
 Dependencies:
-  pip3 install pubsub pigpio adafruit-circuitpython-ads1x15
+  pip3 install pypubsub pigpio adafruit-circuitpython-ads1x15
 
 Built and tested with Python 3.7 on Raspberry Pi 4 Model B
 """

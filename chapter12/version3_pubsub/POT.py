@@ -4,7 +4,7 @@ File: chapter12/version3_pubsub/POT.py
 Potentiometer Class
 
 Dependencies:
-  pip3 install pubsub adafruit-circuitpython-ads1x15
+  pip3 install pypubsub adafruit-circuitpython-ads1x15
 
 Built and tested with Python 3.7 on Raspberry Pi 4 Model B
 """
