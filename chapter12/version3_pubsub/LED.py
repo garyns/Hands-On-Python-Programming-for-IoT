@@ -4,7 +4,7 @@ File: chapter12/version3_pubsub/LED.py
 LED Class
 
 Dependencies:
-  pip3 install pigpio
+  pip3 install pubsub pigpio
 
 Built and tested with Python 3.7 on Raspberry Pi 4 Model B
 """
