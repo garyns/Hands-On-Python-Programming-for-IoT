@@ -23,7 +23,7 @@ See this link for more information and additional formats: https://pillow.readth
 """
 from math import ceil
 from time import sleep
-from collections import deque                                                          # (1)
+from collections import deque                                                           # (1)
 from PIL.ImageColor import getrgb
 from luma.core.render import canvas
 from luma.led_matrix.device import apa102
@@ -41,7 +41,7 @@ NUM_LEDS = 60                                                                   
 color_buffer = deque(['black']*NUM_LEDS, maxlen=NUM_LEDS)                               # (3)
 
 
-# Initialise serial using Hardware SPI0 (SCLK=BCM 11, SDA=BCM 10).
+# Initialise serial using Hardware SPI0 (SCLK=BCM 11, MOSI/SDA=BCM 10).
 # Default bus_speed_hz=8000000. This value may need to be lowered
 # if your Logic Level Converter cannot switch fast enough.
 # Allowed vales are 500000 ,1000000, 2000000, 4000000, 8000000, 16000000, 32000000
