@@ -71,7 +71,7 @@ def handle_connect():
 
 
 @socketio.on('disconnect')                                                           # (7)
-def handle_connect():
+def handle_disconnect():
     """Called with a client disconnects from this server"""
     logger.info("Client {} disconnected.".format(request.sid))
 

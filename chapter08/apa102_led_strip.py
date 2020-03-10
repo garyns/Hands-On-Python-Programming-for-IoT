@@ -4,7 +4,7 @@ File: chapter08/APA102_LED_Strip.py
 Control a APA102 LED Strip.
 
 Dependencies:
-  pip3 install pigpio luma.led_matrix
+  pip3 install luma.led_matrix
 
 If luma.led_matrix fails to install see it's documentation for dependencies what you may need to install first:
 https://luma-led-matrix.readthedocs.io/en/latest/install.html#installing-from-pypi
@@ -44,7 +44,7 @@ color_buffer = deque(['black']*NUM_LEDS, maxlen=NUM_LEDS)                       
 # Initialise serial using Hardware SPI0 (SCLK=BCM 11, MOSI/SDA=BCM 10).
 # Default bus_speed_hz=8000000. This value may need to be lowered
 # if your Logic Level Converter cannot switch fast enough.
-# Allowed vales are 500000 ,1000000, 2000000, 4000000, 8000000, 16000000, 32000000
+# Allowed values are 500000, 1000000, 2000000, 4000000, 8000000, 16000000, 32000000
 # For find the spi class at https://github.com/rm-hull/luma.core/blob/master/luma/core/interface/serial.py
 serial = spi(port=0, device=0, bus_speed_hz=2000000)                                   # (4)
 

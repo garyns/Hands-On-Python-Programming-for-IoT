@@ -28,6 +28,5 @@ The code in this repository accompanies the Packt Book "Hands-On Python Programm
 
 ## [Chapter 13](chapter13) - IoT and Automation Platforms
 
-
-
+## [Chapter 14](chapter14) - Tying it Altogether - An IoT Christmas Tree
 
