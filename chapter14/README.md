@@ -5,6 +5,7 @@
 * `requirements.txt` - Python dependencies required for this chapter
 
 * `tree_api_service`
+  * `README.md` - IoTree API Documentation and Examples
   * `main.py` - Main program
   * `config.py` - Program Configuration
   * `apa102.py` - APA102 LED Strip Electronic Interface 
@@ -16,6 +17,7 @@
   * `static/images/color-bar.png` - Image used in Web App
   
 * `tree_mqtt_service`
+  * `README.md` - IoTree MQTT Topic and Message Format Documentation and Examples
   * `main.py` - Main program
   * `config.py` - Program Configuration
   * `apa102.py` - APA102 LED Strip Electronic Interface 
@@ -25,6 +27,7 @@
   * `mqtt_listener.py` - MQTT Client. Subscribes to MQTT Topic and republishes MQTT messages as PubSub messages
   
 * `dweet_integration_service`
+  * `README.md` - IoTree Dweet Documentation and Examples
   * `main.py` - Main program
   * `config.py` - Program Configuration
   * `dweet_listener.py` - Core Program that listens for Dweets and repblihshed them as MQTT topic/message combinations. 
