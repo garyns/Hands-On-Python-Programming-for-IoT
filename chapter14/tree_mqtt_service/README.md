@@ -1,6 +1,6 @@
 # IoTree MQTT Service
 
-The following is a list of MQTT Topics and message formats recognise by the Tree MQTT Service.
+The following is a list of MQTT topic and message formats recognise by the Tree MQTT Service.
 
 ## Clear (turn off) all LEDS on APA102 LED Strip
 
