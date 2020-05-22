@@ -1,5 +1,5 @@
 """
-File: chapter14/tree_ mqtt_service/servo.py
+File: chapter14/tree_mqtt_service/servo.py
 
 Hardware Interface Layer to Servo.
 

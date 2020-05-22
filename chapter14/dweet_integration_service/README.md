@@ -17,12 +17,12 @@ Based on the default configuration found in [config.py](config.py), the followin
 
 This command is mapped into:
 
-  * Action `clear` is mapped to MQTT Topic `/tree/lights/clear`
+  * Action `clear` is mapped to MQTT Topic `tree/lights/clear`
   * There is no data. An empty MQTT message is used. 
 
 An equivalent `mosquitto_pub` example would be:
 
-`mosquitto_pub -h "localhost" -t "/tree/lights/clear" -m ""`
+`mosquitto_pub -h "localhost" -t "tree/lights/clear" -m ""`
 
 ---
 
@@ -40,12 +40,12 @@ The `color` parameters are name like red or green, or a hex value like #FF0033
 
 This command is mapped into:
 
-  * Action `push` is mapped to MQTT Topic `/tree/lights/push`
+  * Action `push` is mapped to MQTT Topic `tree/lights/push`
   * Data `red blue back` becomes MQTT Message `red blue black`
 
 An equivalent `mosquitto_pub` example would be:
 
-`mosquitto_pub -h "localhost" -t "/tree/lights/push" -m "red blue black"`
+`mosquitto_pub -h "localhost" -t "tree/lights/push" -m "red blue black"`
 
 ---
 
@@ -63,12 +63,12 @@ The `color` parameters are name like red or green, or a hex value like #FF0033
 
 This command is mapped into:
 
-  * Action `pattern` is mapped to MQTT Topic `/tree/lights/pattern`
+  * Action `pattern` is mapped to MQTT Topic `tree/lights/pattern`
   * Data `red blue back` becomes MQTT Message `red blue black`
 
 An equivalent `mosquitto_pub` example would be:
 
-`mosquitto_pub -h "localhost" -t "/tree/lights/pattern" -m "red blue black"`
+`mosquitto_pub -h "localhost" -t "tree/lights/pattern" -m "red blue black"`
 
 ---
 
@@ -86,12 +86,12 @@ The `level` parameter expects a value between `0` and `255`.
 
 This command is mapped into:
 
-  * Action `contrast` is mapped to MQTT Topic `/tree/lights/contrast`
+  * Action `contrast` is mapped to MQTT Topic `tree/lights/contrast`
   * Data `128` becomes MQTT Message `128`
 
 An equivalent `mosquitto_pub` example would be:
 
-`mosquitto_pub -h "localhost" -t "/tree/lights/contrast" -m "128"`
+`mosquitto_pub -h "localhost" -t "tree/lights/contrast" -m "128"`
 
 ---
 
@@ -115,12 +115,12 @@ The `mode` parameter expects one of the following values:
 
 This command is mapped into:
 
-  * Action `animation` is mapped to MQTT Topic `/tree/lights/animation`
+  * Action `animation` is mapped to MQTT Topic `tree/lights/animation`
   * Data `left` becomes MQTT Message `left`
 
 An equivalent `mosquitto_pub` example would be:
 
-`mosquitto_pub -h "localhost" -t "/tree/lights/animation" -m "left"`
+`mosquitto_pub -h "localhost" -t "tree/lights/animation" -m "left"`
 
 ---
 
@@ -138,12 +138,12 @@ The `speed` parameter expects a value between `1` and `10`.
 
 This command is mapped into:
 
-  * Action `speed` is mapped to MQTT Topic `/tree/lights/speed`
+  * Action `speed` is mapped to MQTT Topic `tree/lights/speed`
   * Data `10` becomes MQTT Message `10`
 
 An equivalent `mosquitto_pub` example would be:
 
-`mosquitto_pub -h "localhost" -t "/tree/lights/speed" -m "10"`
+`mosquitto_pub -h "localhost" -t "tree/lights/speed" -m "10"`
 
 ---
 
@@ -159,9 +159,9 @@ An equivalent `mosquitto_pub` example would be:
 
 This command is mapped into:
 
-  * Action `sweep` is mapped to MQTT Topic `/tree/servo/sweep`
+  * Action `sweep` is mapped to MQTT Topic `tree/servo/sweep`
   * There is no data. An empty MQTT message is used. 
 
 An equivalent `mosquitto_pub` example would be:
 
-`mosquitto_pub -h "localhost" -t "/tree/servo/sweep" -m ""`
+`mosquitto_pub -h "localhost" -t "tree/servo/sweep" -m ""`

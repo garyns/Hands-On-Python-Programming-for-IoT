@@ -233,7 +233,7 @@ class DweetListener:
         """
 
         if action in self.action_topic_mappings:
-            # Map Action into MQTT Topic (Eg mode --> /tree/lights/mode). See config.py for mappings.
+            # Map Action into MQTT Topic (Eg mode --> tree/lights/mode). See config.py for mappings.
 
             topic = self.action_topic_mappings[action]
             retain = topic in self.mqtt_topic_retain_message                            # (4)

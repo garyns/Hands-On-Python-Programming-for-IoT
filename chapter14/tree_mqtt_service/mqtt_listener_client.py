@@ -28,7 +28,7 @@ class MQTTListener:
         self.mqtt_port = config.MQTT_PORT
 
         if self.mqtt_topic.find("#") == -1:
-            raise ValueError("MQTT_TOPIC_ROOT must finish with a wildcard character, eg /tree/#")
+            raise ValueError("MQTT_TOPIC_ROOT must finish with a wildcard character, eg tree/#")
 
         self.topic_mappings = config.MQTT_TO_PUBSUB_TOPIC_MAPPINGS
 

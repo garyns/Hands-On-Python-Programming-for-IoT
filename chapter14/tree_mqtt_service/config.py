@@ -60,7 +60,7 @@ MQTT_PORT = 1883
 
 # Root MQTT Topic to subscribe to. This is where we expect to receive IoTree control messages.
 # Make sure it ends in /# (to subscribe to all sub topics in the hierarchy)
-MQTT_TOPIC_ROOT = "/tree/#"
+MQTT_TOPIC_ROOT = "tree/#"
 
 
 
@@ -82,12 +82,12 @@ PUBSUB_TOPIC_SWEEP     = "sweep"
 # The following dictionary defines how MQTT Topics are mapped into local PyPubSub Topics.
 # There is a 1:1 mapping to the above PYPUBSUB_* configurations.
 MQTT_TO_PUBSUB_TOPIC_MAPPINGS = {
-    "/tree/lights/clear":     PUBSUB_TOPIC_CLEAR,
-    "/tree/lights/animation": PUBSUB_TOPIC_ANIMATION,
-    "/tree/lights/push":      PUBSUB_TOPIC_PUSH,
-    "/tree/lights/pattern":   PUBSUB_TOPIC_PATTERN,
-    "/tree/lights/speed":     PUBSUB_TOPIC_SPEED,
-    "/tree/lights/contrast":  PUBSUB_TOPIC_CONTRAST,
-    "/tree/servo/sweep":      PUBSUB_TOPIC_SWEEP
+    "tree/lights/clear":     PUBSUB_TOPIC_CLEAR,
+    "tree/lights/animation": PUBSUB_TOPIC_ANIMATION,
+    "tree/lights/push":      PUBSUB_TOPIC_PUSH,
+    "tree/lights/pattern":   PUBSUB_TOPIC_PATTERN,
+    "tree/lights/speed":     PUBSUB_TOPIC_SPEED,
+    "tree/lights/contrast":  PUBSUB_TOPIC_CONTRAST,
+    "tree/servo/sweep":      PUBSUB_TOPIC_SWEEP
 }
 

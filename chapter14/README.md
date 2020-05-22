@@ -30,5 +30,5 @@
   * `README.md` - IoTree Dweet Documentation and Examples
   * `main.py` - Main program
   * `config.py` - Program Configuration
-  * `dweet_listener.py` - Core Program that listens for Dweets and repblihshed them as MQTT topic/message combinations. 
+  * `dweet_listener.py` - Core Program that listens for Dweets and republished them as MQTT topic/message combinations. 
   
