@@ -9,3 +9,5 @@
 * `digital_output_test.py` - Test digital output
 
 * `analog_pwm_output_test.py` - Create PWM output signal
+
+* `logic_level_input_breadboard.png` - Reference Breadboard Layout for the chapter's DIY exercise
