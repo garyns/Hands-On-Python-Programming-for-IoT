@@ -22,7 +22,7 @@ rtttl_score = parse_rtttl("Scale:d=4,o=4,b=125:8a,8b,8c#,8d,8e,8f#,8g#,8f#,8e,8d
 # Note: 100% will not work becasue 100% = always on, so buzzer will never oscillate.
 duty_cycle_pc = 50 # >0% to <100%
 
-# pi.hardware_PWM() takes a dycy_cycle param 0..1000000
+# pi.hardware_PWM() takes a duty_cycle param 0..1000000
 duty_cycle = (int)(1000000 * (duty_cycle_pc / 100))
 
 try:
@@ -42,4 +42,4 @@ except KeyboardInterrupt:
 
 finally:
     pi.hardware_PWM(BUZZER_GPIO, 0, 0) # Buzzer Off
-    pi.stop() #PiGPIO Cleanup
+    pi.stop() # PiGPIO Cleanup
