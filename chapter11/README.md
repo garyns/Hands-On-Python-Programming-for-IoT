@@ -1,4 +1,4 @@
-# Hands-On Python Programming for IoT
+# Practical Python Programming for IoT
 
 ## Chapter 11 - Measuring Distance and Detecting Movement
 

@@ -1,4 +1,4 @@
-# Hands-On Python Programming for IoT
+# Practical Python Programming for IoT
 
 ## Chapter 13 - IoT and Automation Platforms
 

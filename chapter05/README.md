@@ -1,4 +1,4 @@
-# Hands-On Python Programming for IoT
+# Practical Python Programming for IoT
 
 ## Chapter 5 - Connecting Your Raspberry Pi to the Physical World
 

@@ -1,4 +1,4 @@
-# Hands-On Python Programming for IoT
+# Practical Python Programming for IoT
 
 ## Chapter 12 - Advanced IoT Programming Concepts - Event-Loops, Threads, PubSub &amp; AsyncIO
 

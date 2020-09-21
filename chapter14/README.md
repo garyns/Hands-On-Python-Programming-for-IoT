@@ -1,4 +1,4 @@
-# Hands-On Python Programming for IoT
+# Practical Python Programming for IoT
 
 ## Chapter 14 - Tying it Altogether - An IoT Christmas Tree
 

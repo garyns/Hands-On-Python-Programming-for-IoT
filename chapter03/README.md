@@ -1,4 +1,4 @@
-# Hands-On Python Programming for IoT
+# Practical Python Programming for IoT
 
 ## Chapter 3 - RESTFul APIs and Web Socket Services with Flask
 
