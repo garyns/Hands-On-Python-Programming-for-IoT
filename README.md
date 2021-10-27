@@ -12,7 +12,7 @@ The code in this repository accompanies the Packt Book Practical Python Programm
 
 Practical Python Programming for IoT is available through Packt and Amazon.
 
-* [Amazon US](https://www.amazon.com/Practical-Python-Programming-IoT-WebSockets/dp/1838982469ref=sr_1_1?dchild=1&keywords=Practical-Python-Programming-IoT&qid=1623290029&sr=8-1)
+* [Amazon US](https://www.amazon.com/Practical-Python-Programming-IoT-WebSockets/dp/1838982469/ref=sr_1_1)
 * [Amazon AU](https://www.amazon.com.au/Practical-Python-Programming-IoT-WebSockets-ebook/dp/B08K3MD5Z1)
 * [Packt](https://www.packtpub.com/product/practical-python-programming-for-iot/9781838982461)
 
