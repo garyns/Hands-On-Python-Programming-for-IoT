@@ -9,7 +9,7 @@ Flask-SocketIO==4.2.1
 gpiozero==1.5.1
 idna==2.8
 itsdangerous==1.1.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 pigpio==1.44
 python-engineio==3.9.3
