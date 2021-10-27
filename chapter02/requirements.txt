@@ -5,4 +5,4 @@ gpiozero==1.5.1
 idna==2.8
 pigpio==1.44
 requests==2.22.0
-urllib3==1.25.3
+urllib3==1.26.5
