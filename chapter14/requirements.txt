@@ -6,7 +6,7 @@ Flask==1.1.1
 Flask-RESTful==0.3.8
 idna==2.8
 itsdangerous==1.1.0
-Jinja2==2.11.1
+Jinja2==2.11.3
 luma.core==1.12.0
 luma.led-matrix==1.4.1
 MarkupSafe==1.1.1
